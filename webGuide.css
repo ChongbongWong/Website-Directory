@@ -1,0 +1,309 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+/*矢量图开始*/
+@font-face {
+	font-family: 'iconfont';
+	src: url('./font/iconfont.eot');
+	src: url('./font/iconfont.eot?#iefix') format('embedded-opentype'),
+	url('./font/iconfont.woff') format('woff'),
+	url('./font/iconfont.ttf') format('truetype'),
+	url('./font/iconfont.svg#iconfont') format('svg');
+}
+.iconfont{
+	font-family:"iconfont" !important;
+	font-size:16px;font-style:normal;
+	-webkit-font-smoothing: antialiased;
+	-webkit-text-stroke-width: 0.2px;
+	-moz-osx-font-smoothing: grayscale;
+}
+.cw-icon{
+	overflow: hidden;
+	position: relative;
+	z-index: 1;
+	float: left;
+	border: 1px solid #e3e4e5;
+}
+/*矢量图结束*/
+ul, ol,li{ list-style:none; }/*去掉序号点*/
+body{
+	font: 12px/1.5 Microsoft YaHei,Heiti SC,tahoma,arial,Hiragino Sans GB,"\5B8B\4F53",sans-serif;
+    color: #666;
+}
+div{
+	display: block;
+}
+
+.section{
+	width: 70vw;
+	margin: 0 15vw 0 15vw;
+	position: relative;
+}
+
+.float_left{
+	float: left;
+}
+.float_right{
+	float: right;
+}
+
+.banner{
+	position: relative;
+	margin: 0 auto;
+}
+
+.banner a{
+    display: block;
+    width: 100%;
+    height: 80px;
+    background: url(./广告横幅-大.jpg) no-repeat 50% 0;
+}
+
+header{
+	position: relative;
+	height: 170px;
+}
+
+.logo{
+	width: 12vw;
+	background-color: red;
+}
+.logo a{
+	display: block;
+	width: 100%;
+	height: 170px;
+	background: url(./logo.png) no-repeat 50% 0;
+}
+
+.search,.panel{
+	width:46vw;
+}
+
+.panel{
+	position: absolute;
+	margin-top: 35px;
+}
+
+.panel li{
+	display: none;
+}
+
+.tab{
+	margin-top: 50px;
+}
+.tab li{
+	background: url(./lgray2.png);
+	height: 25px;
+	width: 5vw;
+	float: left;
+	right: 0px;
+	cursor: pointer;
+	text-align: center;
+	display: block;
+	color: white;
+	border-radius: 2px;
+	border: 1px solid white;
+	margin-bottom: 5px;
+}
+
+.search_active{
+	background: url(./gray.png)  !important;
+}
+
+#search_empty_left{
+	width:6vw;
+	background:url();
+	color:white;
+	pointer-events: none;
+}
+
+.panel_web_open{
+	height: 32px;
+}
+
+.panel_open_menu{
+	position: relative;
+	display: none;
+	width: 90px;
+	left: -1px;
+	border-bottom: none;
+	background: #fff;
+	z-index: 999;
+}
+
+
+.panel a{
+	display: block;
+	float: left;
+	width: 6vw;
+	height: 32px;
+	text-indent: -1000px;
+	border: 1px solid #dedede;
+	cursor: pointer;
+	background-image: url(./search-chinese.png);
+	background-repeat: no-repeat;
+}
+
+.baidu{
+	background-position: center -288px; 
+}
+.google{
+	background-position: center -320px;
+}
+.bing{
+	background-position: center -352px;	
+}
+.sogou{
+	background-position: center -384px;
+}
+.qihoo360{
+	background-position: center -448px;
+}
+.bilibili{
+	background-position: center 0;
+}
+.acfun{
+	background-position: center -32px;
+}
+.soku{
+	background-position: center -98px;
+}
+.nico{
+	background-position: center -130px;
+}
+.baidutieba{
+	background-position: center -576px;
+}
+.sogouimg{
+	background-position: center -384px;
+}
+.googleimg{
+	background-position: center -320px;
+}
+.bingimg{
+	background-position: center -352px;	
+}
+.sogouimg{
+	background-position: center -384px;
+}
+.qihoo360img{
+	background-position: center -448px;
+}
+.xiami{
+	background-position: center -162px;
+}
+.baidumusic{
+	background-position: center -288px;
+}
+.baidubaike{
+	background-position: center -194px;
+}
+.youdao{
+	background-position: center -416px;
+}
+.googlefanyi{
+	background-position: center -320px;
+}
+.baidufanyi{
+	background-position: center -194px;
+}
+
+.showing_logo a{
+	border: 0;
+}
+
+.open_button{
+	margin-top: 10px;
+	width: 13px;
+	height: 19px;
+	background-position: 3px -23px;
+	float: left;
+	cursor: pointer;
+	border-radius: 1px;
+	background-image: url(./selector.png); 
+}
+
+.search_text{
+	width: 30vw;
+	height: 32px;
+	border: 1px solid #AAA;
+	border-radius:20px;
+	font-size: 1.4em;
+	padding-left: 0.5vw;
+	float: left;
+}
+
+.search_text:focus{
+    outline:none;
+}
+
+.search_button{
+	width: 5vw;
+	height: 32px;
+	font-size: 1.3em;
+	float: left;
+}
+
+.account{
+	width: 10vw;
+}
+
+.sort ul li{
+	float: left;
+	width: 10vw;
+}
+
+.sort ul:first-child{
+	margin-left: 5vw;
+}
+
+.container_left{
+	width: 14.8vw;
+	border-right: 2px solid #CCCCCC;
+	height: 20vw;
+}
+
+.container_right{
+	width: 14.8vw;
+	border-left: 2px solid #CCC;
+	height: 20vw;
+}
+
+h3{
+	margin-left: 2px;
+}
+
+.container_main ul li{
+	float: left;
+	width: 6.6vw;
+	height: 5vw;
+}
+
+
+.container_main ul li a{
+	font-size: 14px;
+}
+.sort{
+	position: relative;	
+	border: 1px solid rgb(136,0,21);
+	overflow: hidden;
+}
+
+.commonNavigation{
+	position: relative;
+	border: 1px solid rgb(225,174,201);
+	overflow: hidden;
+}
+
+.container{
+	position: relative;
+	border: 1px solid rgb(63,72,204);
+	overflow: hidden;
+}
+
+.footer{
+	position: relative;
+	border: 1px solid rgb(127,127,127);
+	overflow: hidden;
+}
