@@ -1,0 +1,1628 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="UTF-8">
+        <title>rem phone test</title>
+        <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <!--增加viewport meta标签告诉浏览器视口宽度等于设备屏幕宽度，且不进行初始缩放。-->
+        <!--
+        <script type="text/javascript" src="../static/js/jquery.min.js"></script>
+        <script type="text/javascript" src="../static/js/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="../static/js/unslider-min.js"></script>
+        -->
+        <script type="text/javascript" src="../static/js/jquery.js"></script>
+        <script type="text/javascript" src="../static/js/vue.js"></script>
+        <script type="text/javascript" src="../static/js/vue-router.js"></script>
+        <link rel="stylesheet" type="text/css" href="../static/css/webGuide.css">
+        <script type="text/javascript" src="../static/js/webGuide.js"></script>
+        <script type="text/javascript" src="../static/js/formcheck.js"></script>
+
+    </head>
+    
+    <body>
+        <div class="mod" id="app">
+            <!--横幅-->
+            <div style="background-color: #12141a;">
+                <div class="section" >
+                    <div class="banner">
+                        <a href="#"></a>
+                    </div>
+                </div>
+            </div>
+            <!--横幅end-->
+            <!--头部搜索栏-->
+            
+            <header class="section header">
+                <div class="logo float_left">
+                    <a href="#"></a>
+                </div>
+                <div class="search float_left">
+                    <ul class="tab">
+                        <li id="search_empty_left">隐藏字体</li>
+                        <li id="search_web" class="search_active">网页</li>
+                        <li id="search_video">视频</li>
+                        <li id="search_community">社区</li>
+                        <li id="search_image">图片</li>
+                        <li id="search_music">音乐</li>
+                        <li id="search_wiki">百科</li>
+                        <li id="search_translate">翻译</li>
+                    </ul>
+                    <ul class="panel">
+                        <li class="panel_web">
+                            <!--不同引擎填入不同action、name、style-->
+                            <!--当选择了引擎时记得自动点多次收缩按钮，或者做成差不多的样子-->
+                            <form target="_blank" action="http://www.baidu.com/s" method="GET" class="panel_form">
+                                <!--class="baidu"，即为该a添加background:url(百度logo)-->
+                                <!--选中的引擎，填入href、class、baidu-->
+                                <span class="panel_open">
+                                    <span class="showing_logo">
+                                        <a href="http://www.baidu.com" target="_blank" class="baidu">baidu</a>
+                                    </span>
+                                    <div class="open_button">
+                                    </div>
+                                    <!--width要跟不同的引擎名称匹配-->
+                                    <span class="input_text" >
+                                        <input type="text" name="wd" class="search_text" placeholder="输入关键字" maxlength="100" autocomplete="off">
+                                    </span>
+                                    <!--(引擎名称)搜索-->
+                                    <span class="input_submit">
+                                        <input type="submit" class="search_button" value="点击搜索">
+                                    </span>
+                                    <!--选择引擎-->
+                                    <div class="panel_open_menu">
+                                        <a class="baidu">baidu</a>
+                                        <a class="google">google</a>
+                                        <a class="bing">bing</a>
+                                        <a class="sogou">sogou</a>
+                                        <a class="qihoo360">qihoo360</a>
+                                    </div>
+                                </span>
+                            </form>
+                        </li>
+                        <li class="panel_video">
+                            <!--不同引擎填入不同action、name、style-->
+                            <!--当选择了引擎时记得自动点多次收缩按钮，或者做成差不多的样子-->
+                            <form target="_blank" action="http://www.bilibili.com/search" method="GET" class="panel_form">
+                                <!--class="baidu"，即为该a添加background:url(百度logo)-->
+                                <!--选中的引擎，填入href、class、baidu-->
+                                <span class="panel_open">
+                                    <span class="showing_logo">
+                                        <a href="http://www.bilibili.com" target="_blank" class="bilibili">bilibili</a>
+                                    </span>
+                                    <div class="open_button">
+                                    </div>
+                                    <!--width要跟不同的引擎名称匹配-->
+                                    <span class="input_text" >
+                                        <input type="text" name="keyword" class="search_text" placeholder="输入关键字" maxlength="100" autocomplete="off">
+                                    </span>
+                                    <!--(引擎名称)搜索-->
+                                    <span class="input_submit">
+                                        <input type="submit" class="search_button" value="点击搜索">
+                                    </span>
+                                    <!--选择引擎-->
+                                    <div class="panel_open_menu">
+                                        <a class="bilibili">bilibili</a>
+                                        <a class="acfun">acfun</a>
+                                        <a class="soku">soku</a>
+                                        <a class="nico">nico</a>
+                                    </div>
+                                </span>
+                            </form>
+                        </li>
+                        <li class="panel_community">
+                            <!--不同引擎填入不同action、name、style-->
+                            <!--当选择了引擎时记得自动点多次收缩按钮，或者做成差不多的样子-->
+                            <form target="_blank" action="http://tieba.baidu.com/f" method="GET" class="panel_form">
+                                <!--class="baidu"，即为该a添加background:url(百度logo)-->
+                                <!--选中的引擎，填入href、class、baidu-->
+                                <span class="panel_open">
+                                    <span class="showing_logo">
+                                        <a href="http://tieba.baidu.com/" target="_blank" class="baidutieba">baidutieba</a>
+                                    </span>
+                                    <div class="open_button">
+                                    </div>
+                                    <!--width要跟不同的引擎名称匹配-->
+                                    <span class="input_text" >
+                                        <input type="text" name="kw" class="search_text" placeholder="输入关键字" maxlength="100" autocomplete="off">
+                                    </span>
+                                    <!--(引擎名称)搜索-->
+                                    <span class="input_submit">
+                                        <input type="submit" class="search_button" value="点击搜索">
+                                    </span>
+                                    <!--选择引擎-->
+                                    <div class="panel_open_menu">
+                                        <a class="baidutieba">baidutieba</a>
+                                    </div>
+                                </span>
+                            </form>
+                        </li>
+                        <li class="panel_image">
+                            <!--不同引擎填入不同action、name、style-->
+                            <!--当选择了引擎时记得自动点多次收缩按钮，或者做成差不多的样子-->
+                            <form target="_blank" action="http://pic.sogou.com/pics" method="GET" class="panel_form">
+                                <!--class="baidu"，即为该a添加background:url(百度logo)-->
+                                <!--选中的引擎，填入href、class、baidu-->
+                                <span class="panel_open">
+                                    <span class="showing_logo">
+                                        <a href="http://pic.sogou.com/" target="_blank" class="sogouimg">sogouimg</a>
+                                    </span>
+                                    <div class="open_button">
+                                    </div>
+                                    <!--width要跟不同的引擎名称匹配-->
+                                    <span class="input_text" >
+                                        <input type="text" name="query" class="search_text" placeholder="输入关键字" maxlength="100" autocomplete="off">
+                                    </span>
+                                    <!--(引擎名称)搜索-->
+                                    <span class="input_submit">
+                                        <input type="submit" class="search_button" value="点击搜索">
+                                    </span>
+                                    <!--选择引擎-->
+                                    <div class="panel_open_menu">
+                                        <a class="sogouimg">sogouimg</a>
+                                        <a class="googleimg">googleimg</a>
+                                        <a class="bingimg">bingimg</a>
+                                        <a class="qihoo360img">qihoo360img</a>
+                                    </div>
+                                </span>
+                            </form>
+                        </li>
+                        <li class="panel_music">
+                            <!--不同引擎填入不同action、name、style-->
+                            <!--当选择了引擎时记得自动点多次收缩按钮，或者做成差不多的样子-->
+                            <form target="_blank" action="http://www.xiami.com/search" method="GET" class="panel_form">
+                                <!--class="baidu"，即为该a添加background:url(百度logo)-->
+                                <!--选中的引擎，填入href、class、baidu-->
+                                <span class="panel_open">
+                                    <span class="showing_logo">
+                                        <a href="http://www.xiami.com/" target="_blank" class="xiami">xiami</a>
+                                    </span>
+                                    <div class="open_button">
+                                    </div>
+                                    <!--width要跟不同的引擎名称匹配-->
+                                    <span class="input_text" >
+                                        <input type="text" name="key" class="search_text" placeholder="输入关键字" maxlength="100" autocomplete="off">
+                                    </span>
+                                    <!--(引擎名称)搜索-->
+                                    <span class="input_submit">
+                                        <input type="submit" class="search_button" value="点击搜索">
+                                    </span>
+                                    <!--选择引擎-->
+                                    <div class="panel_open_menu">
+                                        <a class="xiami">xiami</a>
+                                        <a class="baidumusic">baidumusic</a>
+                                    </div>
+                                </span>
+                            </form>
+                        </li>
+                        <li class="panel_wiki">
+                            <!--不同引擎填入不同action、name、style-->
+                            <!--当选择了引擎时记得自动点多次收缩按钮，或者做成差不多的样子-->
+                            <form target="_blank" action="http://baike.baidu.com/search/word" method="GET" class="panel_form">
+                                <!--class="baidu"，即为该a添加background:url(百度logo)-->
+                                <!--选中的引擎，填入href、class、baidu-->
+                                <span class="panel_open">
+                                    <span class="showing_logo">
+                                        <a href="http://baike.baidu.com/" target="_blank" class="baidubaike">baidubaike</a>
+                                    </span>
+                                    <div class="open_button">
+                                    </div>
+                                    <!--width要跟不同的引擎名称匹配-->
+                                    <span class="input_text" >
+                                        <input type="text" name="word" class="search_text" placeholder="输入关键字" maxlength="100" autocomplete="off">
+                                    </span>
+                                    <!--(引擎名称)搜索-->
+                                    <span class="input_submit">
+                                        <input type="submit" class="search_button" value="点击搜索">
+                                    </span>
+                                    <!--选择引擎-->
+                                    <div class="panel_open_menu">
+                                        <a class="baidubaike">baidubaike</a>
+                                    </div>
+                                </span>
+                            </form>
+                        </li>
+                        <li class="panel_translate">
+                            <!--不同引擎填入不同action、name、style-->
+                            <!--当选择了引擎时记得自动点多次收缩按钮，或者做成差不多的样子-->
+                            <form target="_blank" action="http://dict.youdao.com/search" method="GET" class="panel_form">
+                                <!--class="baidu"，即为该a添加background:url(百度logo)-->
+                                <!--选中的引擎，填入href、class、baidu-->
+                                <span class="panel_open">
+                                    <span class="showing_logo">
+                                        <a href="http://dict.youdao.com/" target="_blank" class="youdao">youdao</a>
+                                    </span>
+                                    <div class="open_button">
+                                    </div>
+                                    <!--width要跟不同的引擎名称匹配-->
+                                    <span class="input_text" >
+                                        <input type="text" name="q" class="search_text" placeholder="输入关键字" maxlength="100" autocomplete="off">
+                                    </span>
+                                    <!--(引擎名称)搜索-->
+                                    <span class="input_submit">
+                                        <input type="submit" class="search_button" value="点击搜索">
+                                    </span>
+                                    <!--选择引擎-->
+                                    <div class="panel_open_menu">
+                                        <a class="youdao">youdao</a>
+                                        <a class="googlefanyi">googlefanyi</a>
+                                        <a class="baidufanyi">baidufanyi</a>
+                                    </div>
+                                </span>
+                            </form>
+                        </li>
+                    </ul>
+                </div>
+                <div class="account float_left">
+                    <div>
+                        <h2>X您好||登录 / 注册</h2>
+                    </div>
+                    <form action="https://f123.herokuapp.com/api/v1.0/launcher" method="POST" onsubmit="return checklauncher(this)">
+                        邮箱：<input type="text" name="email" size="20" value="" /><br/>
+                        密码：<input type="password" name="password" size="20" value="" /><br/>
+                        <input type="submit" name="submit" value="登陆" style="margin-left:8vw" />
+                    </form>
+                    <form action="https://f123.herokuapp.com/api/v1.0/register" method="POST" onsubmit="return checkregister(this)">
+                        邮箱：<input type="text" name="email" size="20" value="" placeholder="仅支持邮箱注册"/><br/>
+                        昵称：<input type="text" name="username" size="20" value=""  placeholder="输入您的昵称"/><br/>
+                        密码：<input type="password" name="password" size="20" value=""  placeholder="输入密码" /><br/>
+                        确认：<input type="password" name="password2" size="20" value=""  placeholder="再次输入密码"/><br/>
+                        <input type="submit" name="submit" value="注册" style="margin-left:8vw" />
+                    </form>
+                </div>
+            </header>
+
+            <!--头部end-->
+            
+            <!--常用导航条-->
+            <!--
+            <div class="section commonNavigation">
+                <div class="cN_main float_left">常用导航条</div>
+                <div class="cN_set float_right"><button>设置</button></div>
+            </div>
+            -->
+            <!--常用导航条end-->
+            <!--导航条-->
+            <div class="section sort">
+                <ul id="sort_ul">
+                    <li><h3 style="display: inline"> 热门资源导航</h3></li>
+                    <li><router-link to="/movies">电影</router-link></li>
+                    <li><router-link to="/tvs">电视剧</router-link></li>
+                    <li><router-link to="/novels">小说</router-link></li>
+                    <li><router-link to="/acfun">A站</router-link></li>
+                    <li><router-link to="/bilibili">B站</router-link></li>
+                    <li><router-link to="/zhihu">知乎</router-link></li>
+                    <li id="sort_normal_li"><<router-link to="/normal">返回常规导航</router-link></li>
+                </ul>
+            </div>
+            <!--导航条end-->
+            <!--内容-->
+            <div class="section container">
+                <router-view></router-view>
+                <!--
+                <div class="container_left float_left" >
+                    <div class="sort_normal_left">
+                        <h2>知乎今日精选</h2>
+                        <ul id="sort_normal_left_ul" class="sort_left_normal">
+                            <li class="sort_left_normal_focus">
+                                <a>
+                                    <img>
+                                    <div><p></p></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <img>
+                                    <div><p></p></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <img>
+                                    <div><p></p></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <img>
+                                    <div><p></p></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <img>
+                                    <div><p></p></div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="sort_tv_left">
+                        <h2>热门电视剧</h2>
+                        <ul id="sort_tv_left_ul" class="sort_left">
+                            <li class="sort_left_focus">
+                                <a>
+                                    <img>
+                                    <div><p></p></div>
+                                    <div><p></p></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <img>
+                                    <div><p></p></div>
+                                    <div><p></p></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <img>
+                                    <div><p></p></div>
+                                    <div><p></p></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <img>
+                                    <div><p></p></div>
+                                    <div><p></p></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <img>
+                                    <div><p></p></div>
+                                    <div><p></p></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <img>
+                                    <div><p></p></div>
+                                    <div><p></p></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <img>
+                                    <div><p></p></div>
+                                    <div><p></p></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <img>
+                                    <div><p></p></div>
+                                    <div><p></p></div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="sort_movie_left">
+                        <h2>即将上映</h2>
+                        <ul id="sort_movie_left_ul" class="sort_left">
+                            <li class="sort_left_focus">
+                                <a>
+                                    <img>
+                                    <div><p></p></div>
+                                    <div><p></p></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <img>
+                                    <div><p></p></div>
+                                    <div><p></p></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <img>
+                                    <div><p></p></div>
+                                    <div><p></p></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <img>
+                                    <div><p></p></div>
+                                    <div><p></p></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <img>
+                                    <div><p></p></div>
+                                    <div><p></p></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <img>
+                                    <div><p></p></div>
+                                    <div><p></p></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <img>
+                                    <div><p></p></div>
+                                    <div><p></p></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <img>
+                                    <div><p></p></div>
+                                    <div><p></p></div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="container_main float_left">
+                    <div class="sort_normal_main">
+                        <ul>
+                            <li><h3 style="display: inline"> 银行</h3></li>
+                            <li><a href="http://www.boc.cn/">中国银行</a></li>
+                            <li><a href="http://www.abchina.com/">农业银行</a></li>
+                            <li><a href="http://www.icbc.com.cn/">工商银行</a></li>
+                            <li><a href="http://www.ccb.com/">建设银行</a></li>
+                            <li><a href="http://www.bankcomm.com/">交通银行</a></li>
+                        </ul>
+                        <ul>
+                            <li><h3 style="display: inline"> 购物</h3></li>
+                            <li><a href="http://www.taobao.com/">淘宝购物</a></li>
+                            <li><a href="http://www.jd.com/">京东购物</a></li>
+                            <li><a href="http://www.suning.com/">苏宁易购</a></li>
+                            <li><a href="http://www.vip.com/">唯品会</a></li>
+                            <li><a href="http://www.jumei.com/">聚美优品</a></li>
+                        </ul>
+                        <ul>
+                            <li><h3 style="display: inline"> 门户</h3></li>
+                            <li><a href="http://www.qq.com/">腾讯</a></li>
+                            <li><a href="http://www.sohu.com/">搜狐</a></li>
+                            <li><a href="http://www.sina.com.cn/">新浪</a></li>
+                            <li><a href="http://www.163.com/">网易</a></li>
+                            <li><a href="http://www.ifeng.com/">凤凰网</a></li>
+                        </ul>
+                        <ul>
+                            <li><h3 style="display: inline"> 社区</h3></li>
+                            <li><a href="http://www.weibo.com/">新浪微博</a></li>
+                            <li><a href="http://www.zhihu.com/">知乎</a></li>
+                            <li><a href="http://www.douban.com/">豆瓣</a></li>
+                            <li><a href="http://www.tianya.cn/">天涯社区</a></li>
+                            <li><a href="http://www.mop.com/">猫扑</a></li>
+                        </ul>
+                        <ul>
+                            <li><h3 style="display: inline"> 出行</h3></li>
+                            <li><a href="http://www.weather.com.cn/forecast/index.shtml#input">天气</a></li>
+                            <li><a href="https://map.baidu.com/">百度地图</a></li>
+                            <li><a href="http://www.8684.cn/">公交路线</a></li>
+                            <li><a href="http://www.12306.cn/mormhweb/">中国铁路</a></li>
+                            <li><a href="http://flights.ctrip.com/">航班查询</a></li>
+                        </ul>
+                        <ul>
+                            <li><h3 style="display: inline"> 军事</h3></li>
+                            <li><a href="http://military.china.com/">中华网军事</a></li>
+                            <li><a href="http://mil.huanqiu.com/">环球网军事</a></li>
+                            <li><a href="http://www.miercn.com/">米尔军事</a></li>
+                            <li><a href="http://www.mod.gov.cn/">国防部官网</a></li>
+                            <li><a href="http://mil.news.sina.com.cn/">新浪军事</a></li>
+                        </ul>
+                        <ul>
+                            <li><h3 style="display: inline"> 美妆</h3></li>
+                            <li><a href="http://www.meilishuo.com/welcome">美丽说</a></li>
+                            <li><a href="http://bbs.vogue.com.cn/">VOGUE</a></li>
+                            <li><a href="http://www.lady8844.com/">时尚搭配</a></li>
+                            <li><a href="http://www.i2ya.com/">二丫网</a></li>
+                            <li><a href="http://www.trends.com.cn/">时尚网</a></li>
+                        </ul>
+                        <ul>
+                            <li><h3 style="display: inline"> 八卦</h3></li>
+                            <li><a href="http://et.21cn.com/">21CN娱乐</a></li>
+                            <li><a href="http://www.huabian.com/">明星花边</a></li>
+                            <li><a href="http://weibo.com/u/1809782810">全娱乐爆料</a></li>
+                            <li><a href="http://hao.360.cn/rili">万年历</a></li>
+                            <li><a href="http://hao.360.cn/zgjm.html">周公解梦</a></li>
+                        </ul>
+                    </div>
+                    <div class="sort_tv_main">
+                        <button style="float: right;height:28px">更多</button>
+                        <h2 class="sort_main_h1" style="border-bottom: 1px solid grey;padding-top: 0.4px;">最近热门电视剧</h2>
+
+                        <ul id="sort_tv_main_ul" class="sort_main">
+                            <li>
+                                <div>
+                                    <a>
+                                        <img>   
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <a>
+                                        <img>
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <a>
+                                        <img>   
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <a>
+                                        <img>
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <a>
+                                        <img>
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <a>
+                                        <img>   
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <a>
+                                        <img>
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <a>
+                                        <img>   
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <a>
+                                        <img>
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <a>
+                                        <img>
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="sort_movie_main">
+                        <button style="float: right;height:28px">更多</button>
+                        <h2 class="sort_main_h1" style="border-bottom: 1px solid grey;padding-top: 0.4px;">最近热门电影</h2>
+
+                        <ul id="sort_movie_main_ul" class="sort_main">
+                            <li>
+                                <div>
+                                    <a>
+                                        <img>   
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <a>
+                                        <img>
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <a>
+                                        <img>   
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <a>
+                                        <img>
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <a>
+                                        <img>
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <a>
+                                        <img>   
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <a>
+                                        <img>
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <a>
+                                        <img>   
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <a>
+                                        <img>
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <a>
+                                        <img>
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="container_right float_right">
+                    <div class="sort_normal_right">
+                        <h2>凤凰网今日精选</h2>
+                        <ul id="sort_normal_right_ul" class="sort_right_normal">
+                            <li class="sort_right_normal_focus">
+                                <a>
+                                    <img>
+                                    <div><p></p></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <img>
+                                    <div><p></p></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <img>
+                                    <div><p></p></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <img>
+                                    <div><p></p></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="http://news.ifeng.com/a/20180121/55323586_0.shtml">
+                                    <img src="http://d.ifengimg.com/w650_h400/p0.ifengimg.com/pmop/2018/0121/3D255DA3CC0CA5B8A97CAB28BEEDB709246CDC57_size93_w1280_h960.jpeg">
+                                    <div><p>小伙为防超载检查躲“炸弹”旁 警察吓一跳</p></div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="sort_tv_right">
+                        <h2>经典高分电视剧</h2>
+                        <ul id="sort_tv_right_ul" class="sort_right">
+                            <li class="sort_right_focus">
+                                <a>
+                                    <img>
+                                    <div><p></p></div>
+                                    <div><p></p></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <img>
+                                    <div><p></p></div>
+                                    <div><p></p></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <img>
+                                    <div><p></p></div>
+                                    <div><p></p></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <img>
+                                    <div><p></p></div>
+                                    <div><p></p></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <img>
+                                    <div><p></p></div>
+                                    <div><p></p></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <img>
+                                    <div><p></p></div>
+                                    <div><p></p></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <img>
+                                    <div><p></p></div>
+                                    <div><p></p></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <img>
+                                    <div><p></p></div>
+                                    <div><p></p></div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="sort_movie_right">
+                        <h2>正在热映</h2>
+                        <ul id="sort_movie_right_ul" class="sort_right">
+                            <li class="sort_right_focus">
+                                <a>
+                                    <img>
+                                    <div><p></p></div>
+                                    <div><p></p></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <img>
+                                    <div><p></p></div>
+                                    <div><p></p></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <img>
+                                    <div><p></p></div>
+                                    <div><p></p></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <img>
+                                    <div><p></p></div>
+                                    <div><p></p></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <img>
+                                    <div><p></p></div>
+                                    <div><p></p></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <img>
+                                    <div><p></p></div>
+                                    <div><p></p></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <img>
+                                    <div><p></p></div>
+                                    <div><p></p></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <img>
+                                    <div><p></p></div>
+                                    <div><p></p></div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                -->
+            </div>
+            <!--内容end-->
+            <!--底部描述-->
+            <!--
+            <footer class="section footer">
+                底部描述
+            </footer>
+            -->
+            <!--底部描述end-->
+        </div>
+        <template id="normal">
+        <div>
+            <div class="container_left float_left" >
+                <div class="sort_normal_left">
+                        <h2>知乎今日精选</h2>
+                        <ul id="sort_normal_left_ul" class="sort_left_normal">
+                            <li class="sort_left_normal_focus">
+                                <a>
+                                    <img>
+                                    <div><p></p></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <img>
+                                    <div><p></p></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <img>
+                                    <div><p></p></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <img>
+                                    <div><p></p></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <img>
+                                    <div><p></p></div>
+                                </a>
+                            </li>
+                        </ul>
+                </div>
+            </div>
+            <div class="container_main float_left">
+                <div class="sort_normal_main">
+                        <ul>
+                            <li><h3 style="display: inline"> 银行</h3></li>
+                            <li><a href="http://www.boc.cn/">中国银行</a></li>
+                            <li><a href="http://www.abchina.com/">农业银行</a></li>
+                            <li><a href="http://www.icbc.com.cn/">工商银行</a></li>
+                            <li><a href="http://www.ccb.com/">建设银行</a></li>
+                            <li><a href="http://www.bankcomm.com/">交通银行</a></li>
+                        </ul>
+                        <ul>
+                            <li><h3 style="display: inline"> 购物</h3></li>
+                            <li><a href="http://www.taobao.com/">淘宝购物</a></li>
+                            <li><a href="http://www.jd.com/">京东购物</a></li>
+                            <li><a href="http://www.suning.com/">苏宁易购</a></li>
+                            <li><a href="http://www.vip.com/">唯品会</a></li>
+                            <li><a href="http://www.jumei.com/">聚美优品</a></li>
+                        </ul>
+                        <ul>
+                            <li><h3 style="display: inline"> 门户</h3></li>
+                            <li><a href="http://www.qq.com/">腾讯</a></li>
+                            <li><a href="http://www.sohu.com/">搜狐</a></li>
+                            <li><a href="http://www.sina.com.cn/">新浪</a></li>
+                            <li><a href="http://www.163.com/">网易</a></li>
+                            <li><a href="http://www.ifeng.com/">凤凰网</a></li>
+                        </ul>
+                        <ul>
+                            <li><h3 style="display: inline"> 社区</h3></li>
+                            <li><a href="http://www.weibo.com/">新浪微博</a></li>
+                            <li><a href="http://www.zhihu.com/">知乎</a></li>
+                            <li><a href="http://www.douban.com/">豆瓣</a></li>
+                            <li><a href="http://www.tianya.cn/">天涯社区</a></li>
+                            <li><a href="http://www.mop.com/">猫扑</a></li>
+                        </ul>
+                        <ul>
+                            <li><h3 style="display: inline"> 出行</h3></li>
+                            <li><a href="http://www.weather.com.cn/forecast/index.shtml#input">天气</a></li>
+                            <li><a href="https://map.baidu.com/">百度地图</a></li>
+                            <li><a href="http://www.8684.cn/">公交路线</a></li>
+                            <li><a href="http://www.12306.cn/mormhweb/">中国铁路</a></li>
+                            <li><a href="http://flights.ctrip.com/">航班查询</a></li>
+                        </ul>
+                        <ul>
+                            <li><h3 style="display: inline"> 军事</h3></li>
+                            <li><a href="http://military.china.com/">中华网军事</a></li>
+                            <li><a href="http://mil.huanqiu.com/">环球网军事</a></li>
+                            <li><a href="http://www.miercn.com/">米尔军事</a></li>
+                            <li><a href="http://www.mod.gov.cn/">国防部官网</a></li>
+                            <li><a href="http://mil.news.sina.com.cn/">新浪军事</a></li>
+                        </ul>
+                        <ul>
+                            <li><h3 style="display: inline"> 美妆</h3></li>
+                            <li><a href="http://www.meilishuo.com/welcome">美丽说</a></li>
+                            <li><a href="http://bbs.vogue.com.cn/">VOGUE</a></li>
+                            <li><a href="http://www.lady8844.com/">时尚搭配</a></li>
+                            <li><a href="http://www.i2ya.com/">二丫网</a></li>
+                            <li><a href="http://www.trends.com.cn/">时尚网</a></li>
+                        </ul>
+                        <ul>
+                            <li><h3 style="display: inline"> 八卦</h3></li>
+                            <li><a href="http://et.21cn.com/">21CN娱乐</a></li>
+                            <li><a href="http://www.huabian.com/">明星花边</a></li>
+                            <li><a href="http://weibo.com/u/1809782810">全娱乐爆料</a></li>
+                            <li><a href="http://hao.360.cn/rili">万年历</a></li>
+                            <li><a href="http://hao.360.cn/zgjm.html">周公解梦</a></li>
+                        </ul>
+                </div>
+            </div>
+            <div class="container_right float_right">
+                <div class="sort_normal_right">
+                        <h2>凤凰网今日精选</h2>
+                        <ul id="sort_normal_right_ul" class="sort_right_normal">
+                            <li class="sort_right_normal_focus">
+                                <a>
+                                    <img>
+                                    <div><p></p></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <img>
+                                    <div><p></p></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <img>
+                                    <div><p></p></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <img>
+                                    <div><p></p></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="http://news.ifeng.com/a/20180121/55323586_0.shtml">
+                                    <img src="http://d.ifengimg.com/w650_h400/p0.ifengimg.com/pmop/2018/0121/3D255DA3CC0CA5B8A97CAB28BEEDB709246CDC57_size93_w1280_h960.jpeg">
+                                    <div><p>小伙为防超载检查躲“炸弹”旁 警察吓一跳</p></div>
+                                </a>
+                            </li>
+                        </ul>
+                </div>
+            </div>
+        </div>
+        </template>
+        <template id="movies">
+        <div>
+            <div class="container_left float_left" >
+                <div class="sort_movie_left">
+                        <h2>即将上映</h2>
+                        <ul id="sort_movie_left_ul" class="sort_left">
+                            <li class="sort_left_focus">
+                                <a>
+                                    <img>
+                                    <div><p></p></div>
+                                    <div><p></p></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <img>
+                                    <div><p></p></div>
+                                    <div><p></p></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <img>
+                                    <div><p></p></div>
+                                    <div><p></p></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <img>
+                                    <div><p></p></div>
+                                    <div><p></p></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <img>
+                                    <div><p></p></div>
+                                    <div><p></p></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <img>
+                                    <div><p></p></div>
+                                    <div><p></p></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <img>
+                                    <div><p></p></div>
+                                    <div><p></p></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <img>
+                                    <div><p></p></div>
+                                    <div><p></p></div>
+                                </a>
+                            </li>
+                        </ul>
+                </div>
+            </div>
+            <div class="container_main float_left">
+                <div class="sort_movie_main">
+                        <button style="float: right;height:28px">更多</button>
+                        <h2 class="sort_main_h1" style="border-bottom: 1px solid grey;padding-top: 0.4px;">最近热门电影</h2>
+
+                        <ul id="sort_movie_main_ul" class="sort_main">
+                            <li>
+                                <div>
+                                    <a>
+                                        <img>   
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <a>
+                                        <img>
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <a>
+                                        <img>   
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <a>
+                                        <img>
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <a>
+                                        <img>
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <a>
+                                        <img>   
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <a>
+                                        <img>
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <a>
+                                        <img>   
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <a>
+                                        <img>
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <a>
+                                        <img>
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                </div>
+            </div>
+            <div class="container_right float_right">
+                <div class="sort_movie_right">
+                        <h2>正在热映</h2>
+                        <ul id="sort_movie_right_ul" class="sort_right">
+                            <li class="sort_right_focus">
+                                <a>
+                                    <img>
+                                    <div><p></p></div>
+                                    <div><p></p></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <img>
+                                    <div><p></p></div>
+                                    <div><p></p></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <img>
+                                    <div><p></p></div>
+                                    <div><p></p></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <img>
+                                    <div><p></p></div>
+                                    <div><p></p></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <img>
+                                    <div><p></p></div>
+                                    <div><p></p></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <img>
+                                    <div><p></p></div>
+                                    <div><p></p></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <img>
+                                    <div><p></p></div>
+                                    <div><p></p></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <img>
+                                    <div><p></p></div>
+                                    <div><p></p></div>
+                                </a>
+                            </li>
+                        </ul>
+                </div>
+            </div>
+        </div>
+        </template>
+        <template id="novels">
+        <div>
+            <div class="container_left float_left" >
+                <div class="sort_movie_left">
+                        <h2>即将上映</h2>
+                        <ul id="sort_movie_left_ul" class="sort_left">
+                            <li class="sort_left_focus">
+                                <a>
+                                    <img>
+                                    <div><p></p></div>
+                                    <div><p></p></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <img>
+                                    <div><p></p></div>
+                                    <div><p></p></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <img>
+                                    <div><p></p></div>
+                                    <div><p></p></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <img>
+                                    <div><p></p></div>
+                                    <div><p></p></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <img>
+                                    <div><p></p></div>
+                                    <div><p></p></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <img>
+                                    <div><p></p></div>
+                                    <div><p></p></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <img>
+                                    <div><p></p></div>
+                                    <div><p></p></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <img>
+                                    <div><p></p></div>
+                                    <div><p></p></div>
+                                </a>
+                            </li>
+                        </ul>
+                </div>
+            </div>
+            <div class="container_main float_left">
+                <div class="sort_movie_main">
+                        <button style="float: right;height:28px">更多</button>
+                        <h2 class="sort_main_h1" style="border-bottom: 1px solid grey;padding-top: 0.4px;">最近热门电影</h2>
+
+                        <ul id="sort_movie_main_ul" class="sort_main">
+                            <li>
+                                <div>
+                                    <a>
+                                        <img>   
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <a>
+                                        <img>
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <a>
+                                        <img>   
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <a>
+                                        <img>
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <a>
+                                        <img>
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <a>
+                                        <img>   
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <a>
+                                        <img>
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <a>
+                                        <img>   
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <a>
+                                        <img>
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <a>
+                                        <img>
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                </div>
+            </div>
+            <div class="container_right float_right">
+                <div class="sort_movie_right">
+                        <h2>正在热映</h2>
+                        <ul id="sort_movie_right_ul" class="sort_right">
+                            <li class="sort_right_focus">
+                                <a>
+                                    <img>
+                                    <div><p></p></div>
+                                    <div><p></p></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <img>
+                                    <div><p></p></div>
+                                    <div><p></p></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <img>
+                                    <div><p></p></div>
+                                    <div><p></p></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <img>
+                                    <div><p></p></div>
+                                    <div><p></p></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <img>
+                                    <div><p></p></div>
+                                    <div><p></p></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <img>
+                                    <div><p></p></div>
+                                    <div><p></p></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <img>
+                                    <div><p></p></div>
+                                    <div><p></p></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <img>
+                                    <div><p></p></div>
+                                    <div><p></p></div>
+                                </a>
+                            </li>
+                        </ul>
+                </div>
+            </div>
+        </div>
+        </template>
+        <template id="tvs">
+        <div>
+            <div class="container_left float_left" >
+                <div class="sort_tv_left">
+                        <h2>热门电视剧</h2>
+                        <ul id="sort_tv_left_ul" class="sort_left">
+                            <li class="sort_left_focus">
+                                <a>
+                                    <img>
+                                    <div><p></p></div>
+                                    <div><p></p></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <img>
+                                    <div><p></p></div>
+                                    <div><p></p></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <img>
+                                    <div><p></p></div>
+                                    <div><p></p></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <img>
+                                    <div><p></p></div>
+                                    <div><p></p></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <img>
+                                    <div><p></p></div>
+                                    <div><p></p></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <img>
+                                    <div><p></p></div>
+                                    <div><p></p></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <img>
+                                    <div><p></p></div>
+                                    <div><p></p></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <img>
+                                    <div><p></p></div>
+                                    <div><p></p></div>
+                                </a>
+                            </li>
+                        </ul>
+                </div>
+            </div>
+            <div class="container_main float_left">
+                <div class="sort_tv_main">
+                        <button style="float: right;height:28px">更多</button>
+                        <h2 class="sort_main_h1" style="border-bottom: 1px solid grey;padding-top: 0.4px;">最近热门电视剧</h2>
+
+                        <ul id="sort_tv_main_ul" class="sort_main">
+                            <li>
+                                <div>
+                                    <a>
+                                        <img>   
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <a>
+                                        <img>
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <a>
+                                        <img>   
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <a>
+                                        <img>
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <a>
+                                        <img>
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <a>
+                                        <img>   
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <a>
+                                        <img>
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <a>
+                                        <img>   
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <a>
+                                        <img>
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <a>
+                                        <img>
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                </div>
+            </div>
+            <div class="container_right float_right">
+                <div class="sort_tv_right">
+                        <h2>经典高分电视剧</h2>
+                        <ul id="sort_tv_right_ul" class="sort_right">
+                            <li class="sort_right_focus">
+                                <a>
+                                    <img>
+                                    <div><p></p></div>
+                                    <div><p></p></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <img>
+                                    <div><p></p></div>
+                                    <div><p></p></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <img>
+                                    <div><p></p></div>
+                                    <div><p></p></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <img>
+                                    <div><p></p></div>
+                                    <div><p></p></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <img>
+                                    <div><p></p></div>
+                                    <div><p></p></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <img>
+                                    <div><p></p></div>
+                                    <div><p></p></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <img>
+                                    <div><p></p></div>
+                                    <div><p></p></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <img>
+                                    <div><p></p></div>
+                                    <div><p></p></div>
+                                </a>
+                            </li>
+                        </ul>
+                </div>
+            </div>
+        </div>
+        </template>
+    </body>
+    <script type="text/javascript" src="../static/js/webGuide_vue.js"></script>
+</html>
